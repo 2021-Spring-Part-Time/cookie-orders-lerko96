@@ -23,15 +23,27 @@ public class MasterOrder {
     }
 
     public void removeVariety(String variety){
-
+        for(int i = orders.size()-1; i >=0; i--){
+            if(orders.get(i).getVariety().equals(variety)){
+                orders.remove(i);
+            }
+        }
     }
 
-    public String getVarietyBoxes(String variety){
-        return "";
+    public int getVarietyBoxes(String variety){
+        int countVarietyBoxes = 0;
+        for(CookieOrder order:orders){
+            if(order.getVariety().equals(variety)){
+                countVarietyBoxes += order.getNumBoxes();
+            }
+        }
+        return countVarietyBoxes;
     }
 
     public void showOrder(){
-
+        for(CookieOrder order: orders) {
+            System.out.println("Variety: " + order.getVariety() + " Boxes: " + order.getNumBoxes());
+        }
     }
 
 }

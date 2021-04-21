@@ -6,17 +6,17 @@ public class CookieOrder {
     private String variety;
 
     //constructor
-    public CookieOrder(String variety, int numBoxes){
-        this.variety = variety;
-        this.numBoxes = numBoxes;
+    public CookieOrder(String localVariety, int localNumBoxes){
+        this.variety = localVariety;
+        this.numBoxes = localNumBoxes;
     }
 
-    //accessors
-    public String getVariety(){
-        return variety;
-    }
-
+    //accessor 1
     public int getNumBoxes(){
-        return numBoxes;
+        return this.numBoxes;
+    }
+    //accessor 2
+    public String getVariety() {
+        return this.variety;
     }
 }
